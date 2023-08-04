@@ -1,0 +1,59 @@
+鈴鐺  : https://icons.getbootstrap.com/icons/bell/
+
+設定 :　https://icons.getbootstrap.com/icons/gear/
+
+月亮　：　https://icons.getbootstrap.com/icons/moon/
+
+獲取引導程序　：https://icon-sets.iconify.design/quill/fullscreen/
+
+評論comments: https://icon-sets.iconify.design/uil/comments-alt/
+
+剪貼版 :https://icon-sets.iconify.design/?query=calender
+
+apps2 :https://icon-sets.iconify.design/ri/apps-2-line/
+
+日歷 : https://icon-sets.iconify.design/lucide/calendar/
+
+Shop : https://icon-sets.iconify.design/iconamoon/store-light/
+
+home :https://icon-sets.iconify.design/tabler/home/
+
+公事包 : https://icon-sets.iconify.design/uil/briefcase/
+
+Unicons 獨角獸: https://icon-sets.iconify.design/uil/tachometer-fast/
+
+envelope信封: https://icon-sets.iconify.design/bx/envelope/
+
+rss:https://icon-sets.iconify.design/uil/rss/
+
+clipboard: https://icon-sets.iconify.design/uil/clipboard-alt/
+
+mingcute:new-folder-line: https://icon-sets.iconify.design/mingcute/new-folder-line/
+
+material-symbols:file-copy-outline:https://icon-sets.iconify.design/material-symbols/file-copy-outline/
+
+bi:globe: https://icon-sets.iconify.design/bi/globe/
+
+window: https://icon-sets.iconify.design/heroicons/window/
+
+uil:box: https://icon-sets.iconify.design/uil/box/
+
+package: https://icon-sets.iconify.design/uil/package/
+
+layer: https://icon-sets.iconify.design/bx/layer/
+
+uil:streering: https://icon-sets.iconify.design/uil/streering/
+
+uil:chart:https://icon-sets.iconify.design/uil/chart/
+
+uit:table:https://icon-sets.iconify.design/uit/table/
+
+carbon:location: https://icon-sets.iconify.design/carbon/location/
+
+lucide:folder-up:https://icon-sets.iconify.design/lucide/folder-up/
+
+uit:document-layout-center:https://icon-sets.iconify.design/uit/document-layout-center/
+
+fa6-solid:truck-fast:https://icon-sets.iconify.design/fa6-solid/truck-fast/
+
+carbon:search:https://icon-sets.iconify.design/carbon/search/
