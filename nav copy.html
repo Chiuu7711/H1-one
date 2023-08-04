@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Order Details | Hyper - Responsive Bootstrap 5 Admin Dashboard</title>
+  <link rel="icon" href="./10016.ico" />
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .offcanvas-body, .offcanvas-header, .dropdown-menu{
+      background-color: #313A46;
+      border: none;
+    }
+
+    
+  </style>
+</head>
+
+<body>
+  <script src="./js/bootstrap.bundle.min.js"></script>
+
+  <nav class="navbar bg-body-tertiary fixed-top">
+    <div class="container-fluid">
+
+      <div class="col-1">
+        <img src="./img/10011.png" alt="">
+      </div>
+
+      <div class="col-6">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <div class="icon-1">
+        <img src="./10011.png" alt="">
+      </div>
+
+      <div class="icon-2">
+        <img src="./10011.png" alt="">
+      </div>
+
+
+      <div class="icon-3">
+        <img src="./img/bell-regular.svg" alt="">
+      </div>
+
+      <div class="icon-4">
+        <img src="./img/avatar-1.jpg" alt="" width="32px">
+      </div>
+
+      <div class="offcanvas offcanvas-start" tabindex="1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <!-- 表頭 漢堡條 -->
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img src="./img/10009.png" alt=""></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <!-- 突出頁面 資訊 -->
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">NAVIGATION</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">Dashboards</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">APPS</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">Calemder</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">chat</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false"> CRM </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Projects</a></li>
+                <li><a class="dropdown-item" href="#">Order List</a></li>
+                <li><a class="dropdown-item" href="#">Clients</a></li>
+                <li><a class="dropdown-item" href="#">Management</a></li>
+              </ul>
+            </li>
+
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Ecommerce
+              </button>
+            </h2>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false"> Ecommerce </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Products</a></li>
+                <li><a class="dropdown-item" href="#">Products Details</a></li>
+                <li><a class="dropdown-item" href="#">Order Details</a></li>
+                <li><a class="dropdown-item" href="#">Cudtomers</a></li>
+                <li><a class="dropdown-item" href="#">Shopping Cart</a></li>
+                <li><a class="dropdown-item" href="#">Checkout</a></li>
+                <li><a class="dropdown-item" href="#">Sellers</a></li>
+              </ul>
+            </li>
+          </ul>
+          <!-- 搜尋框 -->
+          <form class="d-flex mt-3" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">搜尋</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+
+
+</body>
+
+</html>

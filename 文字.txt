@@ -1,0 +1,165 @@
+NAVIGATION
+
+Dasgboards
+
+APPS
+
+Calendar
+
+Chat
+
+CRM >
+Projects
+Orders List
+Clients
+Management
+
+Ecommerce >
+Products
+Products Drtails
+Customers
+Shopping Cart
+Checkout
+Sellers
+
+Email >
+Inbox
+Read Email
+
+Projects >
+List
+Details
+Gantt new
+Creat Project
+Social Feed
+
+Task >
+List
+Details
+Kanban Board
+
+File Manager
+
+CUSTOM
+
+Pages >
+profile
+profile2
+Invoice
+FAQ
+Pricing
+Maintenance
+Authentication > 
+Login
+Login2
+Register
+Register2
+Logout
+Logout2
+Recover Password
+Recover Password2
+Lock Screen
+Lock Screen2
+Confirm Mail
+Confirm Mail2
+Error >
+Error 404
+Error 404-alt
+Error 505
+Starter Page
+With Preloader
+Timeline
+
+Landing new
+Layouts
+
+COMPONMENTS
+
+Base UI >
+Accordions & Collapse
+Alerts
+Avatars
+Badges
+Breadcrumb
+Buttons
+Cards
+Carousel
+Dropdowns
+Embed Video
+Grid
+List Group
+Modals
+Notifications
+Offcanvas
+Placeholders
+Pagination
+Popovers
+Progress
+Ribbons
+Spinners
+Tabs
+Tooltips
+Links
+Typography
+Utilities
+
+Extended UI >
+Dragula
+Range Slider
+Ratings
+Scrollbar
+Treeview
+
+Widgets
+
+Icons > 
+Remix Icons
+Material Design
+Unicons
+
+Charts >
+Apex Charts
+ChartJS
+Britecharts
+Sparklines
+
+Forms >
+Basic Elements
+Form Advanced
+Validation
+Wizard
+File Uploads
+Editors
+
+Tables >
+Basic Tables
+Data Tables
+
+Maps>
+Google Maps
+Vector Maps
+
+Multi Level>
+Second Level>
+Item 1
+Item 2
+Third Level >
+Item 1
+Item 2
+
+
+Unlimited Access
+Upgrade to plan to get access to unlimited reports
+
+button > Upgrade
+
+
+
+
+
+
+
+
+
+
+
