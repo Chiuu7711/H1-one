@@ -1,4 +1,3 @@
-
 * {
     box-sizing: border-box;
 }
@@ -49,7 +48,7 @@ body {
     height: 70px;
     position: sticky;
     top: 0;
-    background-color: white!important;
+    background-color: white !important;
     z-index: 9;
 }
 
@@ -454,7 +453,7 @@ nav {
     border-width: 0px;
     color: rgb(187, 187, 187) !important;
     font-size: 15PX;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 22.5px;
     /* border-color: rgb(37, 48, 59) !important; */
 }
@@ -469,28 +468,31 @@ nav {
     transform: rotate(90deg);
 }  */
 
-.card,
-.text-center,
-.mb-3,
+.card.text-center.mb-3,
 .btn,
 .btn-primary {
+    width: 50px;
+    width: 80px;
     background-color: rgba(255, 255, 255, 0.08) !important;
     color: azure;
     border: none;
     font-size: 14.4px;
     font-weight: 400;
     line-height: 21.6px;
-    margin-bottom: 25px;
-    margin-left: 15px;
-    margin-right: 25px;
     margin-top: 25px;
 }
 
+
 .card-title {
-    margin-top: 20px;
-    margin-left: 20px;
+    margin-top: 14px;
+    /* margin-left: 20px; */
+    font-weight: 600;
     align-items: center;
-    padding: 0px;
+    padding: 5%;
+}
+
+.card-text {
+    padding: 3%;
 }
 
 .accordion-button {
@@ -501,22 +503,31 @@ nav {
 .card-bodych,
 .btn,
 .btn-primary {
-    /* margin-top: 10px; */
     font-size: 14px;
     font-display: initial;
-    display: flex;
+    /* display: flex; */
+    text-align: center;
+    line-height: auto;
     flex-wrap: wrap;
     align-items: center;
-
+    padding: 10px;
 }
 
-.btn-primary {
+.offcanvas-body.card-bodych {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-left: 50px;
+}
+
+.btn,
+.btn-primary {
+    margin: 10px 0px 20px !important;
 }
 
 .card-svg,
 .img {
-    margin-left: 40px;
+    margin-top: 5%;
 
 }
 
@@ -538,12 +549,25 @@ nav {
     background-color: #0ACF97;
 }
 
+.badge-1,
+.bg-succes-1,
+.float-end-1 {
+    width: 30px;
+    height: 20px;
+    font-size: 10px;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 2px;
+    background-color: #FA5C7C;
+    color: azure;
+}
+
 .offcanvas-body,
 .offcanvas,
 .offcanvas-start,
 .show,
 .offcanvasNavbar .offcanvas-header {
-    width: 260px;
+    width: 260px !important;
 }
 
 .offcanvas-header {
@@ -594,6 +618,92 @@ nav {
 .accordion {
     --bs-accordion-btn-icon: url(./img/round-chevron-right.svg) !important;
     z-index: 20;
+    --bs-accordion-btn-active-icon: hidden !important;
+}
+
+.badge.bg-succes {
+    display: flex;
+    display: var(--bs-accordion-btn-icon);
+}
+
+.badge,
+.bg-succes,
+.float-end {
+    margin: end;
+}
+
+.accordion-button.accordion-collapse {
+    position: relative;
+}
+
+.chevron-btn {
+    position: absolute;
+    right: 0;
+    transform: (-90deg);
+}
+
+.accordion-button:focus {
+    border-width: 0px;
+    /* border-color: none !important; */
+    box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+    /* color: var(--bs-accordion-active-color);
+    background-color: rgb(37, 48, 59); */
+    box-shadow: hidden;
+}
+
+.nav-link {
+    position: relative;
+}
+
+.badge.bg-succes.float-end {
+    position: absolute;
+    right: 0;
+}
+
+.badge-1.bg-succes-1.float-end-1 {
+    position: absolute;
+    right: 0;
+}
+
+.badge-1.text-bg-secondary-1.float-end-1 {
+    background-color: rgb(187, 187, 187);
+    position: absolute;
+    right: 0;
+}
+
+.dropdown-item {
+    width: 80%;
+    position: relative;
+}
+
+.badge-2.text-bg-secondary-2.float-end-2 {
+    font-size: 12px;
+    width: 33px;
+    height: 17px;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    color: #020202;
+    position: absolute;
+    right: 0;
+}
+
+.btn-close {
+    width: 0px;
+    height: 0px;
+    padding: 0px;
+    margin: 0px;
+    --bs-btn-close-bg: none;
+    box-shadow: none;
+    --bs-btn-close-focus-shadow: none;
+}
+
+.offcanvas-header {
+    justify-content: center;
 }
 
 .navbar-nav,
