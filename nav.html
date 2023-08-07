@@ -1,0 +1,1288 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Order Details | Hyper - Responsive Bootstrap 5 Admin Dashboard</title>
+    <link rel="icon" href="./10016.ico" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Nunito, sans-serif !important;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        hr {
+            display: none;
+            border-width: 0px;
+        }
+
+        nav {
+            background-color: rgb(37, 48, 59) !important;
+        }
+
+        .nav-link,
+        .active {
+            color: #8290a1;
+        }
+
+        .navbar,
+        .bg-body-tertiary,
+        .fixed-top,
+        .nav-item {
+            background-color: rgb(37, 48, 59);
+            color: rgb(187, 187, 187) !important;
+            border-width: 0px;
+
+        }
+
+        .offcanvas-header,
+        .btn-close,
+        .nav-link,
+        .active {
+            font-size: 15px;
+            color: rgb(187, 187, 187) !important;
+            border-width: 0px;
+        }
+
+        .nav-link,
+        .active,
+        .item-svg,
+        .float-start {
+            color: rgb(187, 187, 187) !important;
+            /* display: flex; */
+            flex-wrap: nowrap;
+            align-items: center;
+            /* justify-content: center; */
+        }
+
+        .item-svg,
+        .float-start,
+        .badge,
+        .bg-succes,
+        .float-end {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+        }
+
+        .nav-item {
+            flex-wrap: nowrap;
+        }
+
+        .offcanvas-body,
+        .offcanvas-header,
+        .dropdown-menu,
+        .accordion-button,
+        .collapsed,
+        .accordion-collapse,
+        .collapse .accordion-header {
+            background-color: rgb(37, 48, 59) !important;
+            border-width: 0px;
+            color: rgb(187, 187, 187) !important;
+            font-size: 15PX;
+            font-weight: 500;
+            line-height: 22.5px;
+        }
+
+        .accordion-button.collapsed::after {
+            color: rgb(187, 187, 187) !important;
+            transform: rotate(-90deg);
+        }
+
+        .card.text-center.mb-3,
+        .btn,
+        .btn-primary {
+            width: 50px;
+            width: 80px;
+            background-color: rgba(255, 255, 255, 0.08) !important;
+            color: azure;
+            border: none;
+            font-size: 14.4px;
+            font-weight: 400;
+            line-height: 21.6px;
+            margin-top: 25px;
+
+        }
+
+        .card-title {
+            margin-top: 14px;
+            /* margin-left: 20px; */
+            font-weight: 600;
+            align-items: center;
+            padding: 5%;
+        }
+
+        .card-text {
+            padding: 3%;
+        }
+
+        .accordion-button {
+            padding-left: 0px;
+
+        }
+
+        .card-body,
+        .btn,
+        .btn-primary {
+            font-size: 14px;
+            font-display: initial;
+            /* display: flex; */
+            text-align: center;
+            line-height: auto;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .offcanvas-body.card-body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn,
+        .btn-primary {
+            margin: 10px 0px 20px !important;
+        }
+
+        .card-svg,
+        .img {
+            margin-top: 5%;
+            /* margin-left: 0px; */
+
+        }
+
+        .accordion-collapse,
+        .collapse,
+        .show,
+        .accordion,
+        .accordion-button {
+            border-color: rgb(37, 48, 59) !important;
+        }
+
+        .badge,
+        .bg-succes,
+        .float-end {
+            width: 20px;
+            height: 20px;
+            font-size: 10px;
+            border-radius: 2px;
+            background-color: #0ACF97;
+        }
+
+        .badge-1,
+        .bg-succes-1,
+        .float-end-1 {
+            width: 30px;
+            height: 20px;
+            font-size: 10px;
+            text-align: center;
+            line-height: 20px;
+            border-radius: 2px;
+            background-color: #FA5C7C;
+            color: azure;
+        }
+
+        .offcanvas-body,
+        .offcanvas,
+        .offcanvas-start,
+        .show,
+        .offcanvasNavbar .offcanvas-header {
+            width: 260px !important;
+        }
+
+        .accordion {
+            --bs-accordion-border-color: none;
+        }
+
+        .offcanvas-body {
+            padding: 10px !important;
+        }
+
+
+        /* 拉條特效 */
+
+        .offcanvas-body {
+            overflow-x: hidden !important;
+        }
+
+        .offcanvas-body::-webkit-scrollbar {
+            width: 8px;
+            background: rgb(37, 48, 59);
+        }
+
+        .offcanvas-body::-webkit-scrollbar-button {
+            background: rgb(37, 48, 59);
+        }
+
+        .offcanvas-body::-webkit-scrollbar-track-piece {
+            background: rgb(37, 48, 59);
+        }
+
+        .offcanvas-body::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 3px rgb(37, 48, 59);
+        }
+
+        .offcanvas-body::-webkit-scrollbar-thumb {
+            border-radius: 2rem;
+            background-color: rgb(187, 187, 187);
+            border: 1px solid rgb(37, 48, 59);
+        }
+
+        .offcanvas-body::-webkit-scrollbar-corner {
+            width: 5px;
+            border-radius: 2rem;
+            background-color: rgb(187, 187, 187);
+            border: 1px solid rgb(37, 48, 59);
+        }
+
+        .accordion {
+            --bs-accordion-btn-icon: hidden !important;
+            /* --bs-accordion-btn-icon: url(./img/round-chevron-right.svg) !important; */
+            --bs-accordion-btn-active-icon: hidden !important;
+            z-index: 20;
+        }
+
+        .badge.bg-succes {
+            display: flex;
+            display: var(--bs-accordion-btn-icon);
+        }
+
+        .badge,
+        .bg-succes,
+        .float-end {
+            margin: end;
+        }
+
+        .accordion-button.accordion-collapse {
+            position: relative;
+        }
+
+        .chevron-btn {
+            position: absolute;
+            right: 0;
+            transform: (-90deg);
+        }
+
+        .accordion-button:focus {
+            border-width: 0px;
+            /* border-color: none !important; */
+            box-shadow: none;
+        }
+
+        .accordion-button:not(.collapsed) {
+            /* color: var(--bs-accordion-active-color);
+            background-color: rgb(37, 48, 59); */
+            box-shadow: hidden;
+        }
+
+        .nav-link {
+            position: relative;
+            /* text-align: center; */
+            /* line-height:36px; */
+
+        }
+
+        .badge.bg-succes.float-end {
+            position: absolute;
+            right: 0;
+        }
+
+        .badge-1.bg-succes-1.float-end-1 {
+            position: absolute;
+            right: 0;
+        }
+
+        .badge-1.text-bg-secondary-1.float-end-1 {
+            background-color: rgb(187, 187, 187);
+            position: absolute;
+            right: 0;
+        }
+
+        .dropdown-item {
+            width: 80%;
+            position: relative;
+        }
+
+        .badge-2.text-bg-secondary-2.float-end-2 {
+            font-size: 12px;
+            width: 33px;
+            height: 17px;
+            text-align: center;
+            line-height: 20px;
+            border-radius: 10px;
+            background-color: rgb(255, 255, 255);
+            color: #020202;
+            position: absolute;
+            right: 0;
+        }
+
+        .btn-close {
+            width: 0px;
+            height: 0px;
+            padding: 0px;
+            margin: 0px;
+            --bs-btn-close-bg: none;
+            box-shadow: none;
+            --bs-btn-close-focus-shadow: none;
+        }
+
+        .offcanvas-header {
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+
+    <nav class="navbar bg-body-tertiary fixed-top">
+        <div class="container-fluid">
+
+            <div class="col-1">
+                <img src="./img/10011.png" alt="">
+            </div>
+
+            <div class="col-6">
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="icon-1">
+                <img src="./10011.png" alt="">
+            </div>
+
+            <div class="icon-2">
+                <img src="./10011.png" alt="">
+            </div>
+
+
+            <div class="icon-3">
+                <img src="./img/bell-regular.svg" alt="" width="32px>
+            </div>
+
+            <div class=" icon-4">
+                <img src="./img/avatar-1.jpg" alt="" width="32px">
+            </div>
+
+            <div class="offcanvas offcanvas-start" tabindex="1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <!-- 表頭 漢堡條 -->
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img src="./img/10009.png" alt=""></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+
+
+                <!-- 突出頁面 資訊 -->
+                <div class="offcanvas-body" xxl-w="260px" md-w="70px">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#"> &ensp; NAVIGATION</a>
+                        </li>
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseZero" aria-expanded="false"
+                                        aria-controls="flush-collapseZero">
+                                        <img class="item-svg float-start"
+                                            href="https://coderthemes.com/hyper/saas/apps-ecommerce-products.html#sidebarDashboards"
+                                            src="./img/home-alt.svg" width="19" height="19" alt=""> &ensp; Dashboards
+                                        <span class="badge bg-succes float-end">5</span>
+                                    </button>
+
+                                </h2>
+                                <div id="flush-collapseZero" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionFlushExample">
+                                    <div><a class="dropdown-item"
+                                            href="https://coderthemes.com/hyper/saas/dashboard-analytics.html">Analytics</a>
+                                    </div>
+                                    <br>
+                                    <div><a class="dropdown-item"
+                                            href="https://coderthemes.com/hyper/saas/apps-ecommerce-orders-details.html#sidebarEcommerce">
+                                            Ecommerce</a>
+                                    </div>
+                                    <br>
+                                    <div><a class="dropdown-item"
+                                            href="https://coderthemes.com/hyper/saas/dashboard-projects.html">Project</a>
+                                    </div>
+                                    <br>
+                                    <div><a class="dropdown-item"
+                                            href="https://coderthemes.com/hyper/saas/dashboard-crm.html">CRM</a></div>
+                                    <br>
+                                    <div><a class="dropdown-item"
+                                            href="https://coderthemes.com/hyper/saas/dashboard-wallet.html">E-Wallet</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#"> &ensp; APPS</a>
+                            </li>
+                            <br>
+                            <div class="nav-item">
+                                <img class="item-svg float-start" src="./img/calender.svg" width="19" height="19"
+                                    alt="">
+                                <a class="nav-link" href="https://coderthemes.com/hyper/saas/apps-calendar.html"> &ensp;
+                                    Calemder</a>
+                            </div>
+
+                            <div class="nav-item">
+                                <img class="item-svg float-start" src="./img/comments-alt.svg" width="19" height="19"
+                                    alt="">
+                                <a class="nav-link" href="https://coderthemes.com/hyper/saas/apps-chat.html"> &ensp;
+                                    Chat</a>
+                                </dov>
+
+                                <div class="accordion accordion-flush" id="accordionFlushExample">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+                                                aria-expanded="false" aria-controls="flush-collapseOne">
+                                                <img class="item-svg float-start"
+                                                    href="https://coderthemes.com/hyper/saas/apps-chat.html#sidebarCrm"
+                                                    src="./img/tachometer-fast.svg" width="19" height="19" alt="">
+                                                &ensp; CRM <span
+                                                    class="badge-1 bg-succes-1 float-end-1">New</span></button>
+                                        </h2>
+                                        <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                            data-bs-parent="#accordionFlushExample">
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/crm-projects.html">Projects</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/crm-orders-list.html">Order
+                                                    List</a></div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/crm-clients.html">Clients</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/crm-management.html">Management</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
+                                                aria-expanded="false" aria-controls="flush-collapseTwo">
+                                                <img class="item-svg float-start" src="./img/store.svg" width="19"
+                                                    height="19" alt=""> &ensp; Ecommerce <img
+                                                    class="chevron-btn flex-end" src="./img/round-chevron-right.svg"
+                                                    alt=""></button>
+                                        </h2>
+                                        <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                            data-bs-parent="#accordionFlushExample">
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/apps-ecommerce-products.html">Products</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/apps-ecommerce-products-details.html">Products
+                                                    Details</a></div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/apps-ecommerce-orders.html">Order</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/apps-ecommerce-orders-details.html">Order
+                                                    Details</a></div>
+                                            <br>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/apps-ecommerce-customers.html">Cudtomers</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/apps-ecommerce-shopping-cart.html">Shopping
+                                                    Cart</a></div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/apps-ecommerce-checkout.html">Checkout</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/apps-ecommerce-sellers.html">Sellers</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
+                                                aria-expanded="false" aria-controls="flush-collapseThree">
+                                                <img class="item-svg float-start" src="./img/envelope.svg" width="19"
+                                                    height="19" alt=""> &ensp; mail <img class="chevron-btn flex-end"
+                                                    src="./img/round-chevron-right.svg" alt=""></button>
+                                        </h2>
+                                        <div id="flush-collapseThree" class="accordion-collapse collapse"
+                                            data-bs-parent="#accordionFlushExample">
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/apps-email-inbox.html">Inbox</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/apps-email-read.html">Read
+                                                    Email</a></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapsefour"
+                                                aria-expanded="false" aria-controls="flush-collapsefour">
+                                                <img class="item-svg float-start" src="./img/briefcase.svg" width="19"
+                                                    height="19" alt=""> &ensp; Projects <img class="chevron-btn"
+                                                    src="./img/round-chevron-right.svg" alt=""> </button>
+                                        </h2>
+                                        <div id="flush-collapsefour" class="accordion-collapse collapse"
+                                            data-bs-parent="#accordionFlushExample">
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/apps-projects-list.html">List</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/apps-projects-details.html">Details</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/apps-projects-gantt.html">Gantt
+                                                    new<span
+                                                        class="badge-2 text-bg-secondary-2 float-end-2">New</span></a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/apps-projects-add.html">Creat
+                                                    Project</a></div>
+                                        </div>
+                                    </div>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link"
+                                            href="https://coderthemes.com/hyper/saas/apps-social-feed.html">
+                                            <img class="item-svg float-start" src="./img/rss.svg" width="19" height="19"
+                                                alt=""> &ensp; Social Feed </a>
+                                    </li>
+
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapsefive"
+                                                aria-expanded="false" aria-controls="flush-collapsefive">
+                                                <img class="item-svg float-start" src="./img/clipboard-alt.svg"
+                                                    width="19" height="19" alt=""> &ensp; Task <img class="chevron-btn"
+                                                    src="./img/round-chevron-right.svg" alt=""></button>
+                                        </h2>
+                                        <div id="flush-collapsefive" class="accordion-collapse collapse"
+                                            data-bs-parent="#accordionFlushExample">
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/apps-tasks.html">List</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/apps-tasks-details.html">Details</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/apps-kanban.html">Kanban
+                                                    Board</a></div>
+                                        </div>
+                                    </div>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link"
+                                            href="https://coderthemes.com/hyper/saas/apps-file-manager.html">
+                                            <img class="item-svg float-start" src="./img/folder-plus.svg" width="19"
+                                                height="19" alt=""> &ensp; File Manager</a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">CUSTOM</a>
+                                    </li>
+
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapsesix"
+                                                aria-expanded="false" aria-controls="flush-collapsesix">
+                                                <img class="item-svg float-start" src="./img/copy-alt.svg" width="19"
+                                                    height="19" alt=""> &ensp; Pages <img class="chevron-btn"
+                                                    src="./img/round-chevron-right.svg" alt=""></button>
+                                        </h2>
+                                        <div id="flush-collapsesix" class="accordion-collapse collapse"
+                                            data-bs-parent="#accordionFlushExample">
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/pages-profile.html">profile</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/pages-profile-2.html">profile2</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/pages-invoice.html">Invoice</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/pages-faq.html">FAQ</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/pages-pricing.html">Pricing</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/pages-maintenance.html">Maintenance</a>
+                                            </div>
+                                            <br>
+                                            <div class="accordion-item">
+                                                <div class="accordion-header">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseseven"
+                                                        aria-expanded="false"
+                                                        aria-controls="flush-collapseseven">Authentication
+                                                        <img class="chevron-btn" src="./img/round-chevron-right.svg"
+                                                            alt=""></button>
+                                                    <div id="flush-collapseseven" class="accordion-collapse collapse"
+                                                        data-bs-parent="#accordionFlushExample"></div>
+                                                    <div><a class="dropdown-item"
+                                                            href="https://coderthemes.com/hyper/saas/pages-login.html">Login</a>
+                                                    </div>
+                                                    <br>
+                                                    <div><a class="dropdown-item"
+                                                            href="https://coderthemes.com/hyper/saas/pages-login-2.html">Login2</a>
+                                                    </div>
+                                                    <br>
+                                                    <div><a class="dropdown-item"
+                                                            href="https://coderthemes.com/hyper/saas/pages-register.html">Register</a>
+                                                    </div>
+                                                    <br>
+                                                    <div><a class="dropdown-item"
+                                                            href="https://coderthemes.com/hyper/saas/pages-register-2.html">Register
+                                                            2</a></div>
+                                                    <br>
+                                                    <div><a class="dropdown-item"
+                                                            href="https://coderthemes.com/hyper/saas/pages-logout.html">Logout</a>
+                                                    </div>
+                                                    <br>
+                                                    <div><a class="dropdown-item"
+                                                            href="https://coderthemes.com/hyper/saas/pages-logout-2.html">Logout2</a>
+                                                    </div>
+                                                    <br>
+                                                    <div><a class="dropdown-item"
+                                                            href="https://coderthemes.com/hyper/saas/pages-recoverpw.html">Recover
+                                                            Password</a></div>
+                                                    <br>
+                                                    <div><a class="dropdown-item"
+                                                            href="https://coderthemes.com/hyper/saas/pages-recoverpw-2.html">Recover
+                                                            Password2</a></div>
+                                                    <br>
+                                                    <div><a class="dropdown-item"
+                                                            href="https://coderthemes.com/hyper/saas/pages-lock-screen.html">Lock
+                                                            Screen</a></div>
+                                                    <br>
+                                                    <div><a class="dropdown-item"
+                                                            href="https://coderthemes.com/hyper/saas/pages-lock-screen-2.html">Lock
+                                                            Screen</a></div>
+                                                    <br>
+                                                    <div><a class="dropdown-item"
+                                                            href="https://coderthemes.com/hyper/saas/pages-confirm-mail.html">Confirm
+                                                            Mail</a></div>
+                                                    <br>
+                                                    <div><a class="dropdown-item"
+                                                            href="https://coderthemes.com/hyper/saas/pages-confirm-mail-2.html">Confirm
+                                                            Mail2</a></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="accordion-item">
+                                                <div class="accordion-header">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseseven"
+                                                        aria-expanded="false" aria-controls="flush-collapseseven">Error
+                                                        <img class="chevron-btn" src="./img/round-chevron-right.svg"
+                                                            alt=""></button>
+                                                    <div id="flush-collapseseven" class="accordion-collapse collapse"
+                                                        data-bs-parent="#accordionFlushExample"></div>
+                                                    <div><a class="dropdown-item"
+                                                            href="https://coderthemes.com/hyper/saas/pages-404.html">Error
+                                                            404</a></div>
+                                                    <br>
+                                                    <div><a class="dropdown-item"
+                                                            href="https://coderthemes.com/hyper/saas/pages-404-alt.html">Error
+                                                            404-alt</a></div>
+                                                    <br>
+                                                    <div><a class="dropdown-item"
+                                                            href="https://coderthemes.com/hyper/saas/pages-500.html">Error
+                                                            505</a></div>
+                                                    <br>
+                                                    <div><a class="dropdown-item"
+                                                            href="https://coderthemes.com/hyper/saas/pages-starter.html">Starter
+                                                            Page</a></div>
+                                                    <br>
+                                                    <div><a class="dropdown-item"
+                                                            href="https://coderthemes.com/hyper/saas/pages-preloader.html">With
+                                                            Preloader</a></div>
+                                                    <br>
+                                                    <div><a class="dropdown-item"
+                                                            href="https://coderthemes.com/hyper/saas/pages-timeline.html">Timeline</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="nav-item">
+                                        <a class="nav-link" href="https://coderthemes.com/hyper/saas/landing.html">
+                                            <img class="item-svg float-start"
+                                                href="https://coderthemes.com/hyper/saas/landing.html"
+                                                src="./img/globe.svg" width="19" height="19" alt=""> &ensp; Landing<span
+                                                class="badge-1 text-bg-secondary-1 float-end-1">New</span></a>
+                                    </div>
+
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseeight"
+                                                aria-expanded="false" aria-controls="flush-collapseeight">
+                                                <img class="item-svg float-start" src="./img/window.svg" width="19"
+                                                    height="19" alt=""> &ensp; Layouts
+                                                <img class="chevron-btn" src="./img/round-chevron-right.svg"
+                                                    alt=""></button>
+                                        </h2>
+                                        <div id="flush-collapseeight" class="accordion-collapse collapse"
+                                            data-bs-parent="#accordionFlushExample">
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/layouts-horizontal.html">Horizontal</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/layouts-detached.html">Detached</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/layouts-full.html">Full
+                                                    View</a></div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/layouts-fullscreen.html">Fullscreen
+                                                    View</a></div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/layouts-hover.html">Hover
+                                                    Menu</a></div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/layouts-compact.html">Compact</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/layouts-icon-view.html">Icon
+                                                    View</a></div>
+                                        </div>
+                                    </div>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">COMPONMENTS</a>
+                                    </li>
+
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapsenine"
+                                                aria-expanded="false" aria-controls="flush-collapsenine">
+                                                <img class="item-svg float-start" src="./img/box.svg" width="19"
+                                                    height="19" alt=""> &ensp; BaseUI
+                                                <img class="chevron-btn" src="./img/round-chevron-right.svg"
+                                                    alt=""></button>
+                                        </h2>
+                                        <div id="flush-collapsenine" class="accordion-collapse collapse"
+                                            data-bs-parent="#accordionFlushExample">
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/ui-accordions.html">Accordions
+                                                    & Collapse</a></div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/ui-alerts.html">Alerts</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/ui-avatars.html">Avatars</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/ui-badges.html">Badges</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/ui-breadcrumb.html">Breadcrumb</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/ui-buttons.html">Buttons</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/ui-cards.html">Cards</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/ui-carousel.html">Carousel</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/ui-dropdowns.html">Dropdowns</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/ui-embed-video.html">Embed
+                                                    Video</a></div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/ui-grid.html">Grid</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/ui-list-group.html">List
+                                                    Group</a></div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/ui-modals.html">Modals</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/ui-notifications.html">Notifications</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/ui-offcanvas.html">Offcanvas</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/ui-placeholders.html">Placeholders</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/ui-pagination.html">Pagination</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/ui-popovers.html">Popovers</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/ui-progress.html">Progress</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/ui-ribbons.html">Ribbons</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/ui-spinners.html">Spinners</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/ui-tabs.html">Tabs</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/ui-tooltips.html">Tooltips</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/ui-links.html">Links</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/ui-typography.html">Typography</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/ui-utilities.html">Utilities</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseten"
+                                                aria-expanded="false" aria-controls="flush-collapseten">
+                                                <img class="item-svg float-start" src="./img/package.svg" width="19"
+                                                    height="19" alt=""> &ensp; ExtendedUI
+                                                <img class="chevron-btn" src="./img/round-chevron-right.svg"
+                                                    alt=""></button>
+                                        </h2>
+                                        <div id="flush-collapseten" class="accordion-collapse collapse"
+                                            data-bs-parent="#accordionFlushExample">
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/extended-dragula.html">Dragula</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/extended-range-slider.html">Range
+                                                    Slider</a></div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/extended-ratings.html">Ratings</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/extended-scrollbar.html">Scrollbar</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/extended-scrollspy.html">Scrollspy</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/extended-treeview.html">Treeview</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="nav-item">
+                                        <a class="nav-link" href="#">
+                                            <img class="item-svg float-start"
+                                                herf="https://coderthemes.com/hyper/saas/widgets.html"
+                                                src="./img/layer-group.svg" width="19" height="19" alt=""> &ensp;
+                                            Widgets</a>
+                                    </div>
+
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseeleven"
+                                                aria-expanded="false" aria-controls="flush-collapseeleven">
+                                                <img class="item-svg float-start" src="./img/streering.svg" width="19"
+                                                    height="19" alt=""> &ensp; Icons
+                                                <img class="chevron-btn" src="./img/round-chevron-right.svg"
+                                                    alt=""></button>
+                                        </h2>
+                                        <div id="flush-collapseeleven" class="accordion-collapse collapse"
+                                            data-bs-parent="#accordionFlushExample">
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/icons-remixicons.html">Remix
+                                                    Icons</a></div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/icons-mdi.html">Material
+                                                    Design</a></div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/icons-unicons.html">Unicons</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseeighteen"
+                                                aria-expanded="false" aria-controls="flush-collapseeighteen">
+                                                <img class="item-svg float-start" src="./img/chart.svg" width="19"
+                                                    height="19" alt=""> &ensp; Charts
+                                                <img class="chevron-btn" src="./img/round-chevron-right.svg"
+                                                    alt=""></button>
+                                        </h2>
+                                        <div id="flush-collapseeighteen" class="accordion-collapse collapse"
+                                            data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-item">
+                                                <div class="accordion-header">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse"
+                                                        data-bs-target="#flush-collapsenineteen" aria-expanded="false"
+                                                        aria-controls="flush-collapsenineteen">Apex Charts
+                                                        <img class="chevron-btn" src="./img/round-chevron-right.svg"
+                                                            alt=""></button>
+                                                    <div id="flush-collapsenineteen" class="accordion-collapse collapse"
+                                                        data-bs-parent="#accordionFlushExample"></div>
+                                                    <div><a class="dropdown-item"
+                                                            href="https://coderthemes.com/hyper/saas/charts-apex-area.html">Area</a>
+                                                    </div>
+                                                    <br>
+                                                    <div><a class="dropdown-item"
+                                                            href="https://coderthemes.com/hyper/saas/charts-apex-bar.html">Bar</a>
+                                                    </div>
+                                                    <br>
+                                                    <div><a class="dropdown-item"
+                                                            href="https://coderthemes.com/hyper/saas/charts-apex-bubble.html">Bubble</a>
+                                                    </div>
+                                                    <br>
+                                                    <div><a class="dropdown-item"
+                                                            href="https://coderthemes.com/hyper/saas/charts-apex-candlestick.html">Candlestick</a>
+                                                    </div>
+                                                    <br>
+                                                    <div><a class="dropdown-item"
+                                                            href="https://coderthemes.com/hyper/saas/charts-apex-column.html">Column</a>
+                                                    </div>
+                                                    <br>
+                                                    <div><a class="dropdown-item"
+                                                            href="https://coderthemes.com/hyper/saas/charts-apex-heatmap.html">Heatmap</a>
+                                                    </div>
+                                                    <br>
+                                                    <div><a class="dropdown-item"
+                                                            href="https://coderthemes.com/hyper/saas/charts-apex-line.html">Line</a>
+                                                    </div>
+                                                    <br>
+                                                    <div><a class="dropdown-item"
+                                                            href="https://coderthemes.com/hyper/saas/charts-apex-mixed.html">Mixed</a>
+                                                    </div>
+                                                    <br>
+                                                    <div><a class="dropdown-item"
+                                                            href="https://coderthemes.com/hyper/saas/charts-apex-timeline.html">Timeline</a>
+                                                    </div>
+                                                    <br>
+                                                    <div><a class="dropdown-item"
+                                                            href="https://coderthemes.com/hyper/saas/charts-apex-boxplot.html">Boxplot</a>
+                                                    </div>
+                                                    <br>
+                                                    <div><a class="dropdown-item"
+                                                            href="https://coderthemes.com/hyper/saas/charts-apex-treemap.html">Treemap</a>
+                                                    </div>
+                                                    <br>
+                                                    <div><a class="dropdown-item"
+                                                            href="https://coderthemes.com/hyper/saas/charts-apex-pie.html">Pia</a>
+                                                    </div>
+                                                    <br>
+                                                    <div><a class="dropdown-item"
+                                                            href="https://coderthemes.com/hyper/saas/charts-apex-radar.html">Rader</a>
+                                                    </div>
+                                                    <br>
+                                                    <div><a class="dropdown-item"
+                                                            href="https://coderthemes.com/hyper/saas/charts-apex-radialbar.html">PadialBar</a>
+                                                    </div>
+                                                    <br>
+                                                    <div><a class="dropdown-item"
+                                                            href="https://coderthemes.com/hyper/saas/charts-apex-scatter.html">Scatter</a>
+                                                    </div>
+                                                    <br>
+                                                    <div><a class="dropdown-item"
+                                                            href="https://coderthemes.com/hyper/saas/charts-apex-polar-area.html">Polar
+                                                            Area</a></div>
+                                                    <br>
+                                                    <div><a class="dropdown-item"
+                                                            href="https://coderthemes.com/hyper/saas/charts-apex-sparklines.html">Sparklines</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="accordion-item">
+                                                <div class="accordion-header">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#flush-collapsetwenty"
+                                                        aria-expanded="false"
+                                                        aria-controls="flush-collapsetwenty">ChartsIS
+                                                        <img class="chevron-btn" src="./img/round-chevron-right.svg"
+                                                            alt=""></button>
+                                                    <div id="flush-collapsetwenty" class="accordion-collapse collapse"
+                                                        data-bs-parent="#accordionFlushExample"></div>
+                                                    <div><a class="dropdown-item"
+                                                            href="https://coderthemes.com/hyper/saas/charts-chartjs-area.html">Area</a>
+                                                    </div>
+                                                    <br>
+                                                    <div><a class="dropdown-item"
+                                                            href="https://coderthemes.com/hyper/saas/charts-chartjs-bar.html">Bar</a>
+                                                    </div>
+                                                    <br>
+                                                    <div><a class="dropdown-item"
+                                                            href="https://coderthemes.com/hyper/saas/charts-chartjs-line.html">Line</a>
+                                                    </div>
+                                                    <br>
+                                                    <div><a class="dropdown-item"
+                                                            href="https://coderthemes.com/hyper/saas/charts-chartjs-other.html">Other</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/charts-brite.html">Briteachats</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/charts-sparkline.html">Sparklines</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapsetwelve"
+                                                aria-expanded="false" aria-controls="flush-collapsetwelve">
+                                                <img class="item-svg float-start" src="./img/document-layout-center.svg"
+                                                    width="19" height="19" alt=""> &ensp; Forms
+                                                <img class="chevron-btn" src="./img/round-chevron-right.svg"
+                                                    alt=""></button>
+                                        </h2>
+                                        <div id="flush-collapsetwelve" class="accordion-collapse collapse"
+                                            data-bs-parent="#accordionFlushExample">
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/form-elements.html">Basic
+                                                    Elements</a></div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/form-advanced.html">Form
+                                                    Advanced</a></div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/form-validation.html">Validation</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/form-wizard.html">Wizard</a>
+                                            </div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/form-fileuploads.html">File
+                                                    Uploads</a></div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/form-editors.html">Editors</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapsethirteen"
+                                                aria-expanded="false" aria-controls="flush-collapsethirteen">
+                                                <img class="item-svg float-start" src="./img/table.svg" width="19"
+                                                    height="19" alt=""> &ensp; Tables
+                                                <img class="chevron-btn" src="./img/round-chevron-right.svg"
+                                                    alt=""></button>
+                                        </h2>
+                                        <div id="flush-collapsethirteen" class="accordion-collapse collapse"
+                                            data-bs-parent="#accordionFlushExample">
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/tables-basic.html">Basic
+                                                    Tables</a></div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/tables-datatable.html">Data
+                                                    Tables</a></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapsefourteen"
+                                                aria-expanded="false" aria-controls="flush-collapsefourteen">
+                                                <img class="item-svg float-start" src="./img/location-point.svg"
+                                                    width="19" height="19" alt=""> &ensp; Maps
+                                                <img class="chevron-btn" src="./img/round-chevron-right.svg"
+                                                    alt=""></button>
+                                        </h2>
+                                        <div id="flush-collapsefourteen" class="accordion-collapse collapse"
+                                            data-bs-parent="#accordionFlushExample">
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/maps-google.html">Google
+                                                    Maps</a></div>
+                                            <br>
+                                            <div><a class="dropdown-item"
+                                                    href="https://coderthemes.com/hyper/saas/maps-vector.html">Vector
+                                                    Maps</a></div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapsefifteen"
+                                                aria-expanded="false" aria-controls="flush-collapsefifteen">
+                                                <img class="item-svg float-start" src="./img/folder-plus.svg" width="19"
+                                                    height="19" alt=""> &ensp; Multi Level
+                                                <img class="chevron-btn" src="./img/round-chevron-right.svg"
+                                                    alt=""></button>
+                                        </h2>
+                                        <div id="flush-collapsefifteen" class="accordion-collapse collapse"
+                                            data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-item">
+                                                <div class="accordion-header">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse"
+                                                        data-bs-target="#flush-collapsesixteen" aria-expanded="false"
+                                                        aria-controls="flush-collapsesixteen">Second
+                                                        Level<img class="chevron-btn"
+                                                            src="./img/round-chevron-right.svg" alt=""></button>
+                                                    <div id="flush-collapsesixteen" class="accordion-collapse collapse"
+                                                        data-bs-parent="#accordionFlushExample"></div>
+                                                    <div><a class="dropdown-item" href="#">Item 1</a></div>
+                                                    <br>
+                                                    <div><a class="dropdown-item" href="#">Item 2</a></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="accordion-item">
+                                                <div class="accordion-header">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse"
+                                                        data-bs-target="#flush-collapseseventeen" aria-expanded="false"
+                                                        aria-controls="flush-collapseseventeen">Third
+                                                        Level<img class="chevron-btn"
+                                                            src="./img/round-chevron-right.svg" alt=""></button>
+                                                    <div id="flush-collapseseventeen"
+                                                        class="accordion-collapse collapse"
+                                                        data-bs-parent="#accordionFlushExample"></div>
+                                                    <div><a class="dropdown-item" href="#">Item 1</a></div>
+                                                    <br>
+                                                    <div><a class="dropdown-item" href="#">Item 2</a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                    </ul>
+
+                    <div class="card text-center mb-3" style="width: 14rem;">
+                        <div class="cardch-body">
+                            <div class="card-svg"><img src="./img/help-icon.svg" height="90" alt="Helper Icon Image">
+                            </div>
+                            <hr>
+                            <h5 class="card-title">Unlimited Access</h5>
+                            <hr>
+                            <p class="card-text">Upgrade to plan to get access to unlimited reports</p>
+                            <a href="#" class="btn btn-primary">Upgrade</a>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <!-- 搜尋框 -->
+                    <!-- <form class="d-flex mt-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">搜尋</button>
+        </form> -->
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+
+
+</body>
+
+</html>
