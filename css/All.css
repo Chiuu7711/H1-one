@@ -1,4 +1,3 @@
-
 * {
     box-sizing: border-box;
 }
@@ -49,7 +48,7 @@ body {
     height: 70px;
     position: sticky;
     top: 0;
-    background-color: white!important;
+    background-color: white !important;
     z-index: 9;
 }
 
@@ -76,62 +75,14 @@ body {
     width: 100%
 }
 
-ul {
-    list-style-type: none;
 
-    padding-left: 0;
-}
 
-nav.navt.fixed-top {
-    display: flex;
-    width: 100%;
-    height: 70px;
-}
 
-.topbar-menu {
-    display: flex;
-    justify-content: space-evenly;
-}
 
-.dropdown {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(250, 250, 253);
-    height: 70px;
-    padding: 0 12px;
-}
 
-.d-lg-flex.flex-column.gap-1.d-none {
-    background-color: rgb(250, 250, 253);
-}
 
-.d-lg-flex.flex-column.gap-1.d-none h5 {
-    font-size: 15px;
-}
 
-.d-lg-flex.flex-column.gap-1.d-none h6 {
-    font-size: 12.24px;
-}
 
-.us {
-    width: 18px;
-    height: 12px;
-}
-
-.us-fs {
-    font-size: 14.4px;
-}
-
-.account-user-avatar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-a {
-    text-decoration: none;
-}
 
 :root {
     --line-border-fill: #3498db;
@@ -160,6 +111,7 @@ a {
         width: 80%;
     }
 }
+
 
 .progress {
     background-color: var(--line-border-fill);
@@ -375,7 +327,7 @@ footer {
 
 .card-body h5 {
     font-size: 20px;
-    color: #6c757d;
+    color: #6c757d !important;
 }
 
 * {
@@ -390,9 +342,6 @@ hr {
     border-width: 0px;
 }
 
-nav {
-    background-color: rgb(37, 48, 59) !important;
-}
 
 .nav-link,
 .active {
@@ -469,22 +418,7 @@ nav {
     transform: rotate(90deg);
 }  */
 
-.card,
-.text-center,
-.mb-3,
-.btn,
-.btn-primary {
-    background-color: rgba(255, 255, 255, 0.08) !important;
-    color: azure;
-    border: none;
-    font-size: 14.4px;
-    font-weight: 400;
-    line-height: 21.6px;
-    margin-bottom: 25px;
-    margin-left: 15px;
-    margin-right: 25px;
-    margin-top: 25px;
-}
+
 
 .card-title {
     margin-top: 20px;
@@ -601,7 +535,142 @@ nav {
     padding: 0 5%;
 }
 
-.navt {
+* {
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+
+    padding-left: 0;
+}
+
+nav.navt {
     display: flex;
-    background-color: white;
+    width: 100%;
+}
+
+.topbar-menu {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+.dropdown {
+    background-color: rgb(249, 249, 252);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    padding: 0 12px;
+    width: 168px;
+}
+
+@media (max-width: 992px) {
+
+    .dropdown {
+        width: 57.6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: n;
+
+    }
+}
+
+.account-user-avatar {
+    margin-right: 20px;
+}
+
+.d-lg-flex.flex-column.gap-1.d-none {
+    background-color: rgb(250, 250, 253);
+}
+
+.d-lg-flex.flex-column.gap-1.d-none h5 {
+    font-size: 13px;
+    font-weight: bolder;
+}
+
+.d-lg-flex.flex-column.gap-1.d-none h6 {
+    font-size: 12.24px;
+}
+
+.us {
+    width: 18px;
+    height: 12px;
+}
+
+.us-fs {
+    font-size: 14.4px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.d-flex.align-items-center.gap-lg-2.gap-1 {
+    width: 50%;
+}
+
+.topbar-menu {
+    display: flex;
+    justify-content: flex-end;
+    /* 將內容靠右對齊 */
+    align-items: center;
+    gap: 20px;
+    /* 調整間距 */
+    margin-bottom: 0;
+    /* 移除底部間距 */
+}
+
+.english-menu {
+    width: 85.45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navt.d-flex.justify-content-between {
+    padding: 0 12px;
+}
+
+.app-search {
+    width: 300px;
+}
+
+@media (max-width: 992px) {
+
+    .app-search,
+    .english-menu span {
+        display: none;
+        width: 38.67px;
+    }
+}
+
+@media (max-width: 992px) {
+    .english-menu {
+        width: 38.67px;
+    }
+}
+
+.form-control.dropdown-toggle {
+    background-color: #f0f3f8;
+    padding-left: 40px;
+}
+
+.search-icon img {
+    display: none;
+}
+
+@media (max-width: 992px) {
+    .search-icon img {
+        display: flex;
+
+    }
+}
+
+.abc {
+    position: relative;
+    left: 25px;
+    z-index: 9;
 }

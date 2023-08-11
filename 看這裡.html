@@ -8,7 +8,7 @@
     <link rel="icon" href="./10016.ico" />
     <link rel="stylesheet" href="./css/bootstrap.min.css">
 
-    <style>
+    <style> return (first.year - second.year);
         * {
             box-sizing: border-box;
         }
@@ -31,6 +31,7 @@
 
 
         .dropdown {
+            background-color: rgb(249, 249, 252);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -47,7 +48,8 @@
         }
 
         .d-lg-flex.flex-column.gap-1.d-none h5 {
-            font-size: 15px;
+            font-size: 13px;
+            font-weight:bolder;
         }
 
         .d-lg-flex.flex-column.gap-1.d-none h6 {
@@ -82,15 +84,28 @@
             justify-content: flex-end;
             /* 將內容靠右對齊 */
             align-items: center;
-            gap: 3rem;
+            gap: 20px;
             /* 調整間距 */
             margin-bottom: 0;
             /* 移除底部間距 */
         }
+
         .english-menu {
             width: 85.45px;
             display: flex;
-            
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navt.d-flex.justify-content-between {
+            padding: 0 12px;
+        }
+
+        @media (max-width: 992px) {
+            .app-search,.english-menu span {
+                display: none;
+                
+            }
         }
     </style>
 </head>
@@ -98,8 +113,8 @@
 <body>
     <script src="./js/bootstrap.bundle.min.js"></script>
 
-    <nav class="navt">
-        <div class="d-flex align-items-center gap-lg-2 gap-1">
+    <nav class="navt d-flex justify-content-between">
+        <div class="d-flex align-items-center gap-lg-2 gap-1 ">
             <img src="./img/icon/logo-dark-sm.png" alt="">
 
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
@@ -114,7 +129,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
             </div>
-            <div class="app-search dropdown ">
+            <div class="app-search ">
                 <form>
                     <div class="input-group">
                         <input type="search" class="form-control dropdown-toggle" placeholder="Search..."
@@ -156,7 +171,7 @@
 
                         <a href="javascript:void(0);" class="dropdown-item notify-item">
                             <div class="d-flex">
-                                <img class="d-flex me-2 rounded-circle" src="assets/images/users/avatar-2.jpg"
+                                <img class="d-flex me-2 rounded-circle" src=""
                                     alt="Generic placeholder image" height="32">
                                 <div class="w-100">
                                     <h5 class="m-0 font-14">Erwin Brown</h5>
@@ -168,7 +183,7 @@
 
                         <a href="javascript:void(0);" class="dropdown-item notify-item">
                             <div class="d-flex">
-                                <img class="d-flex me-2 rounded-circle" src="assets/images/users/avatar-5.jpg"
+                                <img class="d-flex me-2 rounded-circle" src=""
                                     alt="Generic placeholder image" height="32">
                                 <div class="w-100">
                                     <h5 class="m-0 font-14">Jacob Deo</h5>
@@ -214,7 +229,7 @@
             </li>
 
             <li class="dropdown">
-                <div class="me-3">
+                <div class="">
                     <span class="account-user-avatar d-flex justify-content-center align-items-center ">
                         <img src="./img/avatar-1.jpg" alt="user-image" width="32" class="rounded-circle">
                     </span>
