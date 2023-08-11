@@ -1,32 +1,389 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="icon" href="./10016.ico" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Order Details | Hyper - Responsive Bootstrap 5 Admin Dashboard</title>
+    <link rel="icon" href="../10016.ico" />
     <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/All.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Nunito, sans-serif !important;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        hr {
+            display: none;
+            border-width: 0px;
+        }
+
+        nav {
+            background-color: rgb(37, 48, 59) !important;
+        }
+
+        .nav-link,
+        .active {
+            color: #8290a1;
+        }
+
+        .navbar,
+        .bg-body-tertiary,
+        .fixed-top,
+        .nav-item {
+            background-color: rgb(37, 48, 59);
+            color: rgb(187, 187, 187) !important;
+            border-width: 0px;
+
+        }
+
+        .offcanvas-header,
+        .btn-close,
+        .nav-link,
+        .active {
+            font-size: 15px;
+            color: rgb(187, 187, 187) !important;
+            border-width: 0px;
+        }
+
+        .nav-link,
+        .active,
+        .item-svg,
+        .float-start {
+            color: rgb(187, 187, 187) !important;
+            /* display: flex; */
+            flex-wrap: nowrap;
+            align-items: center;
+            /* justify-content: center; */
+        }
+
+        .item-svg,
+        .float-start,
+        .badge,
+        .bg-succes,
+        .float-end {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+        }
+
+        .nav-item {
+            flex-wrap: nowrap;
+        }
+
+        .offcanvas-body,
+        .offcanvas-header,
+        .dropdown-menu,
+        .accordion-button,
+        .collapsed,
+        .accordion-collapse,
+        .collapse .accordion-header {
+            background-color: rgb(37, 48, 59) !important;
+            border-width: 0px;
+            color: rgb(187, 187, 187) !important;
+            font-size: 15PX;
+            font-weight: 500;
+            line-height: 22.5px;
+        }
+
+        .accordion-button.collapsed::after {
+            color: rgb(187, 187, 187) !important;
+            transform: rotate(-90deg);
+        }
+
+        .card.text-center.mb-3,
+        .btn,
+        .btn-primary {
+            width: 50px;
+            width: 80px;
+            background-color: rgba(255, 255, 255, 0.08) !important;
+            color: azure;
+            border: none;
+            font-size: 14.4px;
+            font-weight: 400;
+            line-height: 21.6px;
+            margin-top: 25px;
+
+        }
+
+        .card-title {
+            margin-top: 14px;
+            /* margin-left: 20px; */
+            font-weight: 600;
+            align-items: center;
+            padding: 5%;
+        }
+
+        .card-text {
+            padding: 3%;
+        }
+
+        .accordion-button {
+            padding-left: 0px;
+
+        }
+
+        .card-body,
+        .btn,
+        .btn-primary {
+            font-size: 14px;
+            font-display: initial;
+            /* display: flex; */
+            text-align: center;
+            line-height: auto;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .offcanvas-body.card-body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn,
+        .btn-primary {
+            margin: 10px 0px 20px !important;
+        }
+
+        .card-svg,
+        .img {
+            margin-top: 5%;
+            /* margin-left: 0px; */
+
+        }
+
+        .accordion-collapse,
+        .collapse,
+        .show,
+        .accordion,
+        .accordion-button {
+            border-color: rgb(37, 48, 59) !important;
+        }
+
+        .badge,
+        .bg-succes,
+        .float-end {
+            width: 20px;
+            height: 20px;
+            font-size: 10px;
+            border-radius: 2px;
+            background-color: #0ACF97;
+        }
+
+        .badge-1,
+        .bg-succes-1,
+        .float-end-1 {
+            width: 30px;
+            height: 20px;
+            font-size: 10px;
+            text-align: center;
+            line-height: 20px;
+            border-radius: 2px;
+            background-color: #FA5C7C;
+            color: azure;
+        }
+
+        .offcanvas-body,
+        .offcanvas,
+        .offcanvas-start,
+        .show,
+        .offcanvasNavbar .offcanvas-header {
+            width: 260px !important;
+        }
+
+        .accordion {
+            --bs-accordion-border-color: none;
+        }
+
+        .offcanvas-body {
+            padding: 10px !important;
+        }
+
+
+        /* 拉條特效 */
+
+        .offcanvas-body {
+            overflow-x: hidden !important;
+        }
+
+        .offcanvas-body::-webkit-scrollbar {
+            width: 8px;
+            background: rgb(37, 48, 59);
+        }
+
+        .offcanvas-body::-webkit-scrollbar-button {
+            background: rgb(37, 48, 59);
+        }
+
+        .offcanvas-body::-webkit-scrollbar-track-piece {
+            background: rgb(37, 48, 59);
+        }
+
+        .offcanvas-body::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 3px rgb(37, 48, 59);
+        }
+
+        .offcanvas-body::-webkit-scrollbar-thumb {
+            border-radius: 2rem;
+            background-color: rgb(187, 187, 187);
+            border: 1px solid rgb(37, 48, 59);
+        }
+
+        .offcanvas-body::-webkit-scrollbar-corner {
+            width: 5px;
+            border-radius: 2rem;
+            background-color: rgb(187, 187, 187);
+            border: 1px solid rgb(37, 48, 59);
+        }
+
+        .accordion {
+            --bs-accordion-btn-icon: hidden !important;
+            /* --bs-accordion-btn-icon: url(./img/round-chevron-right.svg) !important; */
+            --bs-accordion-btn-active-icon: hidden !important;
+            z-index: 20;
+        }
+
+        .badge.bg-succes {
+            display: flex;
+            display: var(--bs-accordion-btn-icon);
+        }
+
+        .badge,
+        .bg-succes,
+        .float-end {
+            margin: end;
+        }
+
+        .accordion-button.accordion-collapse {
+            position: relative;
+        }
+
+        .chevron-btn {
+            position: absolute;
+            right: 0;
+            transform: (-90deg);
+        }
+
+        .accordion-button:focus {
+            border-width: 0px;
+            /* border-color: none !important; */
+            box-shadow: none;
+        }
+
+        .accordion-button:not(.collapsed) {
+            /* color: var(--bs-accordion-active-color);
+            background-color: rgb(37, 48, 59); */
+            box-shadow: hidden;
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .badge.bg-succes.float-end {
+            position: absolute;
+            right: 0;
+        }
+
+        .badge-1.bg-succes-1.float-end-1 {
+            position: absolute;
+            right: 0;
+        }
+
+        .badge-1.text-bg-secondary-1.float-end-1 {
+            background-color: rgb(187, 187, 187);
+            position: absolute;
+            right: 0;
+        }
+
+        .dropdown-item {
+            width: 80%;
+            position: relative;
+        }
+
+        .badge-2.text-bg-secondary-2.float-end-2 {
+            font-size: 12px;
+            width: 33px;
+            height: 17px;
+            text-align: center;
+            line-height: 20px;
+            border-radius: 10px;
+            background-color: rgb(255, 255, 255);
+            color: #020202;
+            position: absolute;
+            right: 0;
+        }
+
+        .btn-close {
+            width: 0px;
+            height: 0px;
+            padding: 0px;
+            margin: 0px;
+            --bs-btn-close-bg: none;
+            box-shadow: none;
+            --bs-btn-close-focus-shadow: none;
+        }
+
+        .offcanvas-header {
+            justify-content: center;
+        }
+    </style>
 </head>
 
 <body>
     <script src="./js/bootstrap.bundle.min.js"></script>
-    <div class="all">
-        <div class="left-nav">
-            <div class="left-nav-t">
+
+    <nav class="navbar bg-body-tertiary fixed-top">
+        <div class="container-fluid">
+
+            <div class="col-1">
+                <img src="./img/10011.png" alt="">
+            </div>
+
+            <div class="col-6">
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="icon-1">
+                <img src="./10011.png" alt="">
+            </div>
+
+            <div class="icon-2">
+                <img src="./10011.png" alt="">
+            </div>
+
+
+            <div class="icon-3">
+                <img src="./img/bell-regular.svg" alt="" width="32px>
+            </div>
+
+            <div class=" icon-4">
+                <img src="./img/avatar-1.jpg" alt="" width="32px">
+            </div>
+
+            <div class="offcanvas offcanvas-start" tabindex="1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <!-- 表頭 漢堡條 -->
                 <div class="offcanvas-header">
                     <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img src="./img/10009.png" alt=""></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
-            </div>
-            <div class="left-nav-b">
-                <div class="offcanvas-body" xxl-w="260px" md-w="70px">
-                    <ul class="navbar-nav  justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">   NAVIGATION</a>
-                        </li>
 
+
+                <!-- 突出頁面 資訊 -->
+                <div class="offcanvas-body" xxl-w="260px" md-w="70px">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#"> &ensp; NAVIGATION</a>
+                        </li>
                         <div class="accordion accordion-flush" id="accordionFlushExample">
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
@@ -35,9 +392,8 @@
                                         aria-controls="flush-collapseZero">
                                         <img class="item-svg float-start"
                                             href="https://coderthemes.com/hyper/saas/apps-ecommerce-products.html#sidebarDashboards"
-                                            src="./img/home-alt.svg" width="19" height="19" alt="">   Dashboards
-                                        <span class="badge-1 bg-succes-1 float-end-1">5</span>
-                                        <img src="./img/envelope.svg" alt="">
+                                            src="./img/home-alt.svg" width="19" height="19" alt=""> <p class="bodych">&ensp;Dashboards</p>
+                                        <span class="badge bg-succes float-end">5</span>
                                     </button>
 
                                 </h2>
@@ -48,7 +404,8 @@
                                     </div>
                                     <br>
                                     <div><a class="dropdown-item"
-                                            href="https://coderthemes.com/hyper/saas/apps-ecommerce-orders-details.html#sidebarEcommerce">Ecommerce</a>
+                                            href="https://coderthemes.com/hyper/saas/apps-ecommerce-orders-details.html#sidebarEcommerce">
+                                            Ecommerce</a>
                                     </div>
                                     <br>
                                     <div><a class="dropdown-item"
@@ -65,22 +422,22 @@
                             </div>
 
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">  APPS</a>
+                                <a class="nav-link active" aria-current="page" href="#"> &ensp; APPS</a>
                             </li>
                             <br>
                             <div class="nav-item">
                                 <img class="item-svg float-start" src="./img/calender.svg" width="19" height="19"
                                     alt="">
-                                <a class="nav-link" href="https://coderthemes.com/hyper/saas/apps-calendar.html">  
+                                <a class="nav-link" href="https://coderthemes.com/hyper/saas/apps-calendar.html"> &ensp;
                                     Calemder</a>
                             </div>
 
                             <div class="nav-item">
                                 <img class="item-svg float-start" src="./img/comments-alt.svg" width="19" height="19"
                                     alt="">
-                                <a class="nav-link" href="https://coderthemes.com/hyper/saas/apps-chat.html">  
+                                <a class="nav-link" href="https://coderthemes.com/hyper/saas/apps-chat.html"> &ensp;
                                     Chat</a>
-
+                                </dov>
 
                                 <div class="accordion accordion-flush" id="accordionFlushExample">
                                     <div class="accordion-item">
@@ -91,7 +448,8 @@
                                                 <img class="item-svg float-start"
                                                     href="https://coderthemes.com/hyper/saas/apps-chat.html#sidebarCrm"
                                                     src="./img/tachometer-fast.svg" width="19" height="19" alt="">
-                                                  CRM </button>
+                                                &ensp; CRM <span
+                                                    class="badge-1 bg-succes-1 float-end-1">New</span></button>
                                         </h2>
                                         <div id="flush-collapseOne" class="accordion-collapse collapse"
                                             data-bs-parent="#accordionFlushExample">
@@ -119,7 +477,9 @@
                                                 data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
                                                 aria-expanded="false" aria-controls="flush-collapseTwo">
                                                 <img class="item-svg float-start" src="./img/store.svg" width="19"
-                                                    height="19" alt=""> <img class="chevron-btn"  src="./img/round-chevron-right.svg" alt="">  Ecommerce</button>
+                                                    height="19" alt=""> &ensp; Ecommerce <img
+                                                    class="chevron-btn flex-end" src="./img/round-chevron-right.svg"
+                                                    alt=""></button>
                                         </h2>
                                         <div id="flush-collapseTwo" class="accordion-collapse collapse"
                                             data-bs-parent="#accordionFlushExample">
@@ -164,7 +524,8 @@
                                                 data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
                                                 aria-expanded="false" aria-controls="flush-collapseThree">
                                                 <img class="item-svg float-start" src="./img/envelope.svg" width="19"
-                                                    height="19" alt=""> <img class="chevron-btn"  src="./img/round-chevron-right.svg" alt="">  mail</button>
+                                                    height="19" alt=""> &ensp; mail <img class="chevron-btn flex-end"
+                                                    src="./img/round-chevron-right.svg" alt=""></button>
                                         </h2>
                                         <div id="flush-collapseThree" class="accordion-collapse collapse"
                                             data-bs-parent="#accordionFlushExample">
@@ -184,7 +545,8 @@
                                                 data-bs-toggle="collapse" data-bs-target="#flush-collapsefour"
                                                 aria-expanded="false" aria-controls="flush-collapsefour">
                                                 <img class="item-svg float-start" src="./img/briefcase.svg" width="19"
-                                                    height="19" alt=""> <img class="chevron-btn"  src="./img/round-chevron-right.svg" alt="">  Projects</button>
+                                                    height="19" alt=""> &ensp; Projects <img class="chevron-btn"
+                                                    src="./img/round-chevron-right.svg" alt=""> </button>
                                         </h2>
                                         <div id="flush-collapsefour" class="accordion-collapse collapse"
                                             data-bs-parent="#accordionFlushExample">
@@ -198,7 +560,9 @@
                                             <br>
                                             <div><a class="dropdown-item"
                                                     href="https://coderthemes.com/hyper/saas/apps-projects-gantt.html">Gantt
-                                                    new<span class="badge-2 text-bg-secondary-2 float-end-2">New</span></a></div>
+                                                    new<span
+                                                        class="badge-2 text-bg-secondary-2 float-end-2">New</span></a>
+                                            </div>
                                             <br>
                                             <div><a class="dropdown-item"
                                                     href="https://coderthemes.com/hyper/saas/apps-projects-add.html">Creat
@@ -210,7 +574,7 @@
                                         <a class="nav-link"
                                             href="https://coderthemes.com/hyper/saas/apps-social-feed.html">
                                             <img class="item-svg float-start" src="./img/rss.svg" width="19" height="19"
-                                                alt="">  Social Feed</a>
+                                                alt=""> &ensp; Social Feed </a>
                                     </li>
 
                                     <div class="accordion-item">
@@ -219,7 +583,8 @@
                                                 data-bs-toggle="collapse" data-bs-target="#flush-collapsefive"
                                                 aria-expanded="false" aria-controls="flush-collapsefive">
                                                 <img class="item-svg float-start" src="./img/clipboard-alt.svg"
-                                                    width="19" height="19" alt=""> <img class="chevron-btn"  src="./img/round-chevron-right.svg" alt="">  Task</button>
+                                                    width="19" height="19" alt=""> &ensp; Task <img class="chevron-btn"
+                                                    src="./img/round-chevron-right.svg" alt=""></button>
                                         </h2>
                                         <div id="flush-collapsefive" class="accordion-collapse collapse"
                                             data-bs-parent="#accordionFlushExample">
@@ -241,7 +606,7 @@
                                         <a class="nav-link"
                                             href="https://coderthemes.com/hyper/saas/apps-file-manager.html">
                                             <img class="item-svg float-start" src="./img/folder-plus.svg" width="19"
-                                                height="19" alt="">   File Manager</a>
+                                                height="19" alt=""> &ensp; File Manager</a>
                                     </li>
 
                                     <li class="nav-item">
@@ -254,7 +619,8 @@
                                                 data-bs-toggle="collapse" data-bs-target="#flush-collapsesix"
                                                 aria-expanded="false" aria-controls="flush-collapsesix">
                                                 <img class="item-svg float-start" src="./img/copy-alt.svg" width="19"
-                                                    height="19" alt=""> <img class="chevron-btn"  src="./img/round-chevron-right.svg" alt="">  Pages</button>
+                                                    height="19" alt=""> &ensp; Pages <img class="chevron-btn"
+                                                    src="./img/round-chevron-right.svg" alt=""></button>
                                         </h2>
                                         <div id="flush-collapsesix" class="accordion-collapse collapse"
                                             data-bs-parent="#accordionFlushExample">
@@ -287,7 +653,9 @@
                                                     <button class="accordion-button collapsed" type="button"
                                                         data-bs-toggle="collapse" data-bs-target="#flush-collapseseven"
                                                         aria-expanded="false"
-                                                        aria-controls="flush-collapseseven"><img class="chevron-btn"  src="./img/round-chevron-right.svg" alt="">Authentication</button>
+                                                        aria-controls="flush-collapseseven">Authentication
+                                                        <img class="chevron-btn" src="./img/round-chevron-right.svg"
+                                                            alt=""></button>
                                                     <div id="flush-collapseseven" class="accordion-collapse collapse"
                                                         data-bs-parent="#accordionFlushExample"></div>
                                                     <div><a class="dropdown-item"
@@ -344,8 +712,9 @@
                                                 <div class="accordion-header">
                                                     <button class="accordion-button collapsed" type="button"
                                                         data-bs-toggle="collapse" data-bs-target="#flush-collapseseven"
-                                                        aria-expanded="false"
-                                                        aria-controls="flush-collapseseven"><img class="chevron-btn"  src="./img/round-chevron-right.svg" alt="">Error</button>
+                                                        aria-expanded="false" aria-controls="flush-collapseseven">Error
+                                                        <img class="chevron-btn" src="./img/round-chevron-right.svg"
+                                                            alt=""></button>
                                                     <div id="flush-collapseseven" class="accordion-collapse collapse"
                                                         data-bs-parent="#accordionFlushExample"></div>
                                                     <div><a class="dropdown-item"
@@ -380,7 +749,7 @@
                                         <a class="nav-link" href="https://coderthemes.com/hyper/saas/landing.html">
                                             <img class="item-svg float-start"
                                                 href="https://coderthemes.com/hyper/saas/landing.html"
-                                                src="./img/globe.svg" width="19" height="19" alt="">  Landing<span
+                                                src="./img/globe.svg" width="19" height="19" alt=""> &ensp; Landing<span
                                                 class="badge-1 text-bg-secondary-1 float-end-1">New</span></a>
                                     </div>
 
@@ -390,7 +759,9 @@
                                                 data-bs-toggle="collapse" data-bs-target="#flush-collapseeight"
                                                 aria-expanded="false" aria-controls="flush-collapseeight">
                                                 <img class="item-svg float-start" src="./img/window.svg" width="19"
-                                                    height="19" alt=""> <img class="chevron-btn"  src="./img/round-chevron-right.svg" alt="">  Layouts</button>
+                                                    height="19" alt=""> &ensp; Layouts
+                                                <img class="chevron-btn" src="./img/round-chevron-right.svg"
+                                                    alt=""></button>
                                         </h2>
                                         <div id="flush-collapseeight" class="accordion-collapse collapse"
                                             data-bs-parent="#accordionFlushExample">
@@ -434,13 +805,15 @@
                                                 data-bs-toggle="collapse" data-bs-target="#flush-collapsenine"
                                                 aria-expanded="false" aria-controls="flush-collapsenine">
                                                 <img class="item-svg float-start" src="./img/box.svg" width="19"
-                                                    height="19" alt=""> <img class="chevron-btn"  src="./img/round-chevron-right.svg" alt="">  BaseUI</button>
+                                                    height="19" alt=""> &ensp; BaseUI
+                                                <img class="chevron-btn" src="./img/round-chevron-right.svg"
+                                                    alt=""></button>
                                         </h2>
                                         <div id="flush-collapsenine" class="accordion-collapse collapse"
                                             data-bs-parent="#accordionFlushExample">
                                             <div><a class="dropdown-item"
                                                     href="https://coderthemes.com/hyper/saas/ui-accordions.html">Accordions
-                                                    &amp; Collapse</a></div>
+                                                    & Collapse</a></div>
                                             <br>
                                             <div><a class="dropdown-item"
                                                     href="https://coderthemes.com/hyper/saas/ui-alerts.html">Alerts</a>
@@ -550,7 +923,9 @@
                                                 data-bs-toggle="collapse" data-bs-target="#flush-collapseten"
                                                 aria-expanded="false" aria-controls="flush-collapseten">
                                                 <img class="item-svg float-start" src="./img/package.svg" width="19"
-                                                    height="19" alt=""> <img class="chevron-btn"  src="./img/round-chevron-right.svg" alt="">  ExtendedUI</button>
+                                                    height="19" alt=""> &ensp; ExtendedUI
+                                                <img class="chevron-btn" src="./img/round-chevron-right.svg"
+                                                    alt=""></button>
                                         </h2>
                                         <div id="flush-collapseten" class="accordion-collapse collapse"
                                             data-bs-parent="#accordionFlushExample">
@@ -584,7 +959,7 @@
                                         <a class="nav-link" href="#">
                                             <img class="item-svg float-start"
                                                 herf="https://coderthemes.com/hyper/saas/widgets.html"
-                                                src="./img/layer-group.svg" width="19" height="19" alt="">  
+                                                src="./img/layer-group.svg" width="19" height="19" alt=""> &ensp;
                                             Widgets</a>
                                     </div>
 
@@ -594,7 +969,9 @@
                                                 data-bs-toggle="collapse" data-bs-target="#flush-collapseeleven"
                                                 aria-expanded="false" aria-controls="flush-collapseeleven">
                                                 <img class="item-svg float-start" src="./img/streering.svg" width="19"
-                                                    height="19" alt=""> <img class="chevron-btn"  src="./img/round-chevron-right.svg" alt="">  Icons</button>
+                                                    height="19" alt=""> &ensp; Icons
+                                                <img class="chevron-btn" src="./img/round-chevron-right.svg"
+                                                    alt=""></button>
                                         </h2>
                                         <div id="flush-collapseeleven" class="accordion-collapse collapse"
                                             data-bs-parent="#accordionFlushExample">
@@ -618,7 +995,9 @@
                                                 data-bs-toggle="collapse" data-bs-target="#flush-collapseeighteen"
                                                 aria-expanded="false" aria-controls="flush-collapseeighteen">
                                                 <img class="item-svg float-start" src="./img/chart.svg" width="19"
-                                                    height="19" alt=""> <img class="chevron-btn"  src="./img/round-chevron-right.svg" alt="">  Charts</button>
+                                                    height="19" alt=""> &ensp; Charts
+                                                <img class="chevron-btn" src="./img/round-chevron-right.svg"
+                                                    alt=""></button>
                                         </h2>
                                         <div id="flush-collapseeighteen" class="accordion-collapse collapse"
                                             data-bs-parent="#accordionFlushExample">
@@ -627,8 +1006,9 @@
                                                     <button class="accordion-button collapsed" type="button"
                                                         data-bs-toggle="collapse"
                                                         data-bs-target="#flush-collapsenineteen" aria-expanded="false"
-                                                        aria-controls="flush-collapsenineteen">Apex
-                                                        Charts</button>
+                                                        aria-controls="flush-collapsenineteen">Apex Charts
+                                                        <img class="chevron-btn" src="./img/round-chevron-right.svg"
+                                                            alt=""></button>
                                                     <div id="flush-collapsenineteen" class="accordion-collapse collapse"
                                                         data-bs-parent="#accordionFlushExample"></div>
                                                     <div><a class="dropdown-item"
@@ -706,7 +1086,9 @@
                                                     <button class="accordion-button collapsed" type="button"
                                                         data-bs-toggle="collapse" data-bs-target="#flush-collapsetwenty"
                                                         aria-expanded="false"
-                                                        aria-controls="flush-collapsetwenty"><img class="chevron-btn"  src="./img/round-chevron-right.svg" alt="">ChartsIS</button>
+                                                        aria-controls="flush-collapsetwenty">ChartsIS
+                                                        <img class="chevron-btn" src="./img/round-chevron-right.svg"
+                                                            alt=""></button>
                                                     <div id="flush-collapsetwenty" class="accordion-collapse collapse"
                                                         data-bs-parent="#accordionFlushExample"></div>
                                                     <div><a class="dropdown-item"
@@ -743,7 +1125,9 @@
                                                 data-bs-toggle="collapse" data-bs-target="#flush-collapsetwelve"
                                                 aria-expanded="false" aria-controls="flush-collapsetwelve">
                                                 <img class="item-svg float-start" src="./img/document-layout-center.svg"
-                                                    width="19" height="19" alt=""> <img class="chevron-btn"  src="./img/round-chevron-right.svg" alt="">  Forms</button>
+                                                    width="19" height="19" alt=""> &ensp; Forms
+                                                <img class="chevron-btn" src="./img/round-chevron-right.svg"
+                                                    alt=""></button>
                                         </h2>
                                         <div id="flush-collapsetwelve" class="accordion-collapse collapse"
                                             data-bs-parent="#accordionFlushExample">
@@ -779,7 +1163,9 @@
                                                 data-bs-toggle="collapse" data-bs-target="#flush-collapsethirteen"
                                                 aria-expanded="false" aria-controls="flush-collapsethirteen">
                                                 <img class="item-svg float-start" src="./img/table.svg" width="19"
-                                                    height="19" alt=""> <img class="chevron-btn"  src="./img/round-chevron-right.svg" alt="">  Tables</button>
+                                                    height="19" alt=""> &ensp; Tables
+                                                <img class="chevron-btn" src="./img/round-chevron-right.svg"
+                                                    alt=""></button>
                                         </h2>
                                         <div id="flush-collapsethirteen" class="accordion-collapse collapse"
                                             data-bs-parent="#accordionFlushExample">
@@ -799,7 +1185,9 @@
                                                 data-bs-toggle="collapse" data-bs-target="#flush-collapsefourteen"
                                                 aria-expanded="false" aria-controls="flush-collapsefourteen">
                                                 <img class="item-svg float-start" src="./img/location-point.svg"
-                                                    width="19" height="19" alt=""> <img class="chevron-btn"  src="./img/round-chevron-right.svg" alt="">  Maps</button>
+                                                    width="19" height="19" alt=""> &ensp; Maps
+                                                <img class="chevron-btn" src="./img/round-chevron-right.svg"
+                                                    alt=""></button>
                                         </h2>
                                         <div id="flush-collapsefourteen" class="accordion-collapse collapse"
                                             data-bs-parent="#accordionFlushExample">
@@ -820,7 +1208,9 @@
                                                 data-bs-toggle="collapse" data-bs-target="#flush-collapsefifteen"
                                                 aria-expanded="false" aria-controls="flush-collapsefifteen">
                                                 <img class="item-svg float-start" src="./img/folder-plus.svg" width="19"
-                                                    height="19" alt=""> <img class="chevron-btn"  src="./img/round-chevron-right.svg" alt="">  Multi Level</button>
+                                                    height="19" alt=""> &ensp; Multi Level
+                                                <img class="chevron-btn" src="./img/round-chevron-right.svg"
+                                                    alt=""></button>
                                         </h2>
                                         <div id="flush-collapsefifteen" class="accordion-collapse collapse"
                                             data-bs-parent="#accordionFlushExample">
@@ -830,7 +1220,8 @@
                                                         data-bs-toggle="collapse"
                                                         data-bs-target="#flush-collapsesixteen" aria-expanded="false"
                                                         aria-controls="flush-collapsesixteen">Second
-                                                        Level<img class="chevron-btn"  src="./img/round-chevron-right.svg" alt=""></button>
+                                                        Level<img class="chevron-btn"
+                                                            src="./img/round-chevron-right.svg" alt=""></button>
                                                     <div id="flush-collapsesixteen" class="accordion-collapse collapse"
                                                         data-bs-parent="#accordionFlushExample"></div>
                                                     <div><a class="dropdown-item" href="#">Item 1</a></div>
@@ -845,7 +1236,8 @@
                                                         data-bs-toggle="collapse"
                                                         data-bs-target="#flush-collapseseventeen" aria-expanded="false"
                                                         aria-controls="flush-collapseseventeen">Third
-                                                        Level<img class="chevron-btn"  src="./img/round-chevron-right.svg" alt=""></button>
+                                                        Level<img class="chevron-btn"
+                                                            src="./img/round-chevron-right.svg" alt=""></button>
                                                     <div id="flush-collapseseventeen"
                                                         class="accordion-collapse collapse"
                                                         data-bs-parent="#accordionFlushExample"></div>
@@ -857,12 +1249,10 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
                     </ul>
 
                     <div class="card text-center mb-3" style="width: 14rem;">
-                        <div class="card-bodych">
+                        <div class="cardch-body">
                             <div class="card-svg"><img src="./img/help-icon.svg" height="90" alt="Helper Icon Image">
                             </div>
                             <hr>
@@ -879,340 +1269,17 @@
 
                     <!-- 搜尋框 -->
                     <!-- <form class="d-flex mt-3" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">搜尋</button>
-            </form> -->
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">搜尋</button>
+        </form> -->
                 </div>
             </div>
+
         </div>
-        <div class="right-container">
-            <div class="right-container-t">
-                <nav class="navt d-flex justify-content-between">
-                    <div class="d-flex align-items-center gap-lg-2 gap-1 ">
-                        <img src="./img/icon/logo-dark-sm.png" alt="">
-
-                        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
-                            aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="offcanvas offcanvas-start" tabindex="1" id="offcanvasNavbar"
-                            aria-labelledby="offcanvasNavbarLabel">
-                            <!-- 表頭 漢堡條 -->
-                            <div class="offcanvas-header">
-                                <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img src="./img/10009.png" alt="">
-                                </h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
-                                    aria-label="Close"></button>
-                            </div>
-                        </div>
-                        <div class="app-search ">
-                            <form>
-                                <div class="input-group"><img class="abc" src="./img/icon/search.svg" alt="">
-                                    <input type="search" class="form-control dropdown-toggle" placeholder="Search..."
-                                        id="top-search">
-                                    <span class="mdi mdi-magnify search-icon" img src="" alt=""></span>
-                                    <button class="input-group-text btn btn-primary" type="submit">Search</button>
-                                </div>
-                            </form>
-
-                            <div class="dropdown-menu dropdown-menu-animated dropdown-lg" id="search-dropdown">
-
-                                <div class="dropdown-header noti-title">
-                                    <h5 class="text-overflow mb-2">Found <span class="text-danger">17</span> results
-                                    </h5>
-                                </div>
+    </nav>
 
 
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="uil-notes font-16 me-1"></i>
-                                    <span>Analytics Report</span>
-                                </a>
 
-
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="uil-life-ring font-16 me-1"></i>
-                                    <span>How can I help you?</span>
-                                </a>
-
-
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="uil-cog font-16 me-1"></i>
-                                    <span>User profile settings</span>
-                                </a>
-
-                                <div class="dropdown-header noti-title">
-                                    <h6 class="text-overflow mb-2 text-uppercase">Users</h6>
-                                </div>
-
-                                <div class="notification-list">
-
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="d-flex">
-                                            <img class="d-flex me-2 rounded-circle" src=""
-                                                alt="Generic placeholder image" height="32">
-                                            <div class="w-100">
-                                                <h5 class="m-0 font-14">Erwin Brown</h5>
-                                                <span class="font-12 mb-0">UI Designer</span>
-                                            </div>
-                                        </div>
-                                    </a>
-
-
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="d-flex">
-                                            <img class="d-flex me-2 rounded-circle" src=""
-                                                alt="Generic placeholder image" height="32">
-                                            <div class="w-100">
-                                                <h5 class="m-0 font-14">Jacob Deo</h5>
-                                                <span class="font-12 mb-0">Developer</span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <ul class="topbar-menu d-flex align-items-center  mb-0">
-                        <li class="search-icon">
-                            <img src="./img/icon/search.svg" alt="">
-                        </li>
-                        <a   class="us-icon-box" href="">
-                            <li class="english-menu">
-                                <img class="us" src="./img/icon/us.jpg" alt="">
-                                <span class="us-fs">English</span>
-                                <img class="us" src="./img/icon/down.svg" alt="">
-                            </li>
-                        </a>
-                        <li class="bell">
-                            <img src="./img/bell.svg" alt="">
-                        </li>
-
-                        <li class="apps">
-                            <img src="./img/icon/apps-2-line.svg" alt="">
-                        </li>
-
-                        <li class="settings">
-                            <img src="./img/icon/set.svg" alt="">
-                        </li>
-
-                        <li class="moon">
-                            <img src="./img/icon/moon.svg" alt="">
-                        </li>
-
-
-                        <li class="link">
-                            <img src="./img/icon/fullscreen.svg" alt="">
-                        </li>
-
-                        <li class="dropdown">
-                     
-                                <span class="account-user-avatar d-flex justify-content-center align-items-center ">
-                                    <img src="./img/avatar-1.jpg" alt="user-image" width="32" class="rounded-circle">
-                                </span>
-                    
-                            <div><span class="d-lg-flex flex-column gap-1 d-none">
-                                    <h5 class="my-0">Dominic Keller</h5>
-                                    <h6 class="my-0 fw-normal">Founder</h6>
-                                </span></div>
-                        </li>
-                    </ul>
-
-                </nav>
-            </div>
-            <div class="right-container-b">
-                <div class="bigbox container-text-center">
-                    <div class="titlebody">
-                        <div class="col-12">
-                            <div class="page-title-right">
-                                <h4>Order Details</h4>
-                                <div class="breadcrumb">
-                                    <a>
-                                        <li class="breadcrumb-item">Hyper&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;
-                                        </li>
-                                    </a>
-                                    <a>
-                                        <li class="breadcrumb-item">
-                                            eCommerce&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;</li>
-                                    </a>
-                                    <li class="breadcrumb-item active">Order Details</li>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="step">
-                        <div class="progress-container">
-                            <div class="progress" id="progress"></div>
-                            <div class="circle active">
-                                <span data-bs-container="#tooltip-container" data-bs-toggle="tooltip"
-                                    data-bs-placement="bottom" data-bs-original-title="20/08/2018 07:24 PM">Order
-                                    Placed</span>
-                            </div>
-                            <div class="circle">
-                                <span data-bs-container="#tooltip-container" data-bs-toggle="tooltip"
-                                    data-bs-placement="bottom"
-                                    data-bs-original-title="21/08/2018 11:32 AM">Packed</span>
-                            </div>
-                            <div class="circle">
-                                <span>Shipped</span>
-                            </div>
-                            <div class="circle">
-                                <span>Delivered</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 col-lg-8">
-                            <div class="card-body">
-                                <h4 class="header-title mb-3 fs-6">Items from Order #12537</h4>
-                                <div class="table-responsive">
-                                    <table class="table mb-0">
-                                        <thead class="a table-light ">
-                                            <tr>
-                                                <th>Item</th>
-                                                <th>Quantity</th>
-                                                <th>Price</th>
-                                                <th>Total</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>The Military Duffle Bag</td>
-                                                <td>3</td>
-                                                <td>$128</td>
-                                                <td>$384</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Mountain Basket Ball</td>
-                                                <td>1</td>
-                                                <td>$199</td>
-                                                <td>$199</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Wavex Canvas Messenger Bag</td>
-                                                <td>5</td>
-                                                <td>$180</td>
-                                                <td>$900</td>
-                                            </tr>
-                                            <tr>
-                                                <td>The Utility Shirt</td>
-                                                <td>2</td>
-                                                <td>$79</td>
-                                                <td>$158</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-lg-4">
-                            <div class="card-body">
-                                <h4 class="header-title mb-3 fs-6">Order Summary</h4>
-                                <div class="table-responsive">
-                                    <table class="table mb-0">
-                                        <thead class="table-light">
-                                            <tr>
-                                                <th>Description</th>
-                                                <th>Price</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Grand Total :</td>
-                                                <td>$1641</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Shipping Charge :</td>
-                                                <td>$23</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Estimated Tax : </td>
-                                                <td>$19.22</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Total :</td>
-                                                <td>$1683.22</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="card-body">
-                                <div class="card-b">
-                                    <h4 class="header-title mb-3 fs-6">Shipping Information</h4>
-                                    <h5>Stanley Jones</h5>
-                                    <address class="mb-0 font-14 address-lg">
-                                        795 Folsom Ave, Suite 600<br>
-                                        San Francisco, CA 94107<br>
-                                        <abbr title="Phone">P:</abbr> (123) 456-7890 <br>
-                                        <abbr title="Mobile">M:</abbr> (+01) 12345 67890
-                                    </address>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="card-body">
-                                <div class="card-b">
-                                    <h4 class="header-title mb-3 fs-6">Billing Information</h4>
-
-                                    <ul class="list-unstyled mb-0">
-                                        <li>
-                                            <p class="mb-2"><span class="fw-bold me-2">Payment Type:</span> Credit
-                                                Card</p>
-                                            <p class="mb-2"><span class="fw-bold me-2">Provider:</span> Visa ending
-                                                in 2851
-                                            </p>
-                                            <p class="mb-2"><span class="fw-bold me-2">Valid Date:</span> 02/2020
-                                            </p>
-                                            <p class="mb-0"><span class="fw-bold me-2">CVV:</span> xxx</p>
-                                        </li>
-                                    </ul>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="card-body">
-                                <div class="card-b">
-                                    <h4 class="header-title mb-3 fs-6">Delivery Info</h4>
-                                    <div class="fast-car"><img src="./img/icon/truck-fast.svg" alt=""></div>
-                                    <div class="text-center-1">
-                                        <i class="mdi mdi-truck-fast h2 text-muted"></i>
-                                        <h5 class="fs-6"><b>UPS Delivery</b></h5>
-                                        <p class="mb-1"><b>Order ID :</b> xxxx235</p>
-                                        <p class="mb-0"><b>Payment Mode :</b> COD</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <footer class="footer">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <p class="footer-tittle">2023 © Hyper - Coderthemes.com</p>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="text-md-end footer-links d-none d-md-block">
-                                        <a href="javascript: void(0);">About&nbsp;&nbsp;&nbsp;</a>
-                                        <a href="javascript: void(0);">Support&nbsp;&nbsp;&nbsp;</a>
-                                        <a href="javascript: void(0);">Contact Us&nbsp;&nbsp;&nbsp;</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </footer>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
 </body>
 
 </html>
